@@ -1,0 +1,100 @@
+/* CSS Document */
+.c3pie{
+	width:300px;
+	height:220px;
+	display:block;
+	position: relative;
+	
+	.fx,.fg,.bg{
+		position: absolute;
+		-webkit-transform-origin: 50% 100%;
+	}
+	
+	.fg{
+		width:300px;
+		height:220px;
+		display: block;
+		background-size:300px 220px;
+		-webkit-transform:scale(0.90);
+	}
+	
+	
+	.fx{
+		width:300px;
+		height:220px;
+		opacity: 0.75;
+		display: block;
+		background-size:300px 220px;
+	}
+	
+	.bg{
+		width:360px;
+		height:260px;
+		display: block;
+		background-size:360px 260px;
+	}
+	
+	
+	&.autoplay .fx{
+		-webkit-animation:10s zoomLS  ease-in-out infinite;
+	}
+	
+	&.autoplay .fg{
+		-webkit-animation:20s zoomSL  ease-in-out infinite;
+	}
+	
+	&.autoplay .bg{
+		-webkit-animation:20s zoomLS ease-in-out infinite;
+	}
+	
+	
+	&.hover .fx{
+		-webkit-animation:zoomLS 10s ease-in-out infinite;
+	}
+	
+	&.hover .fg{
+		
+		-webkit-animation:zoomSL 20s ease-in-out infinite;
+
+	}
+	
+	&.hover .bg{
+		
+		-webkit-animation:zoomLS 20s ease-in-out infinite;
+		
+	}
+	
+	&.hover:hover .fx,
+	&.hover:hover .fg,
+	&.hover:hover .bg{
+		cursor:progress;
+	}
+	
+}
+
+	@-webkit-keyframes zoomSL{
+		0%{
+			-webkit-transform:translateX(0px) scale(0.90);
+		}
+		50%{
+			-webkit-transform:translateX(30px) scale(1.1);
+		}
+		100%{
+			-webkit-transform:translateX(0px) scale(0.90);
+		}
+	}
+
+	
+	@-webkit-keyframes zoomLS{
+		0%{
+			-webkit-transform:rotate(5deg) scale(1.2);
+		}
+		50%{
+			-webkit-transform:rotate(0deg) scale(1);
+		}
+		100%{
+			-webkit-transform:rotate(5deg) scale(1.2);
+		}
+	}
+	
+
